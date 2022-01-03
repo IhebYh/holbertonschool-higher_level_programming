@@ -4,8 +4,8 @@
  * @head: list
  * Return: 0 or 1
  */
- int is_plaindrome(listint_t **head)
- {
+int is_palindrome(listint_t **head)
+{
 	const listint_t *current;
 	int len;
 	int i, j;

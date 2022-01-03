@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 def add_tuplet(tuple_a=(), tuple_b=()):
-    a = tuple_a or (0, 0)
-    b = tuple_b or (0, 0)
-    if len(tuple_a) == 1:
-        a = (tuple_a[0], 0)
-    if len(tuple_b) == 1:
-        b = (tuple_b[0], 0)
-    return (a[0] + b[0], a[1] + b[1])
+    y = ()
+    for x in (tuple_a, tuple_b):
+        if len(x) == 0:
+            x = (0, 0)
+        elif len(x) == 1:
+            x = (x[0], 0)
+        if y == ():
+            y = x
+    return x[0] + y[0], x[1] + y[1]

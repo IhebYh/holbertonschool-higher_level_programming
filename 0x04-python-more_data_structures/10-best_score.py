@@ -6,4 +6,4 @@ def best_score(a_dictionary):
         if a_dictionary[i] > kv:
             k = i
             kv = a_dictionary[i]
-    return k
+    return k if k != "" else None

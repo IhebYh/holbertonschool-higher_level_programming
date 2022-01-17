@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-prints safely a list of ints 
+    prints safely a list of ints
 
-"""
+    """
 
 
 def safe_print_list_integers(my_list=[], x=0):
@@ -11,7 +11,7 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             print('{:d}'.format(my_list[i]), end="")
             nb += 1
-        except (TypeError, ValueError, IndexError):
+        except (TypeError, ValueError):
             continue
     print()
     return(nb)

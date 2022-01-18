@@ -2,21 +2,20 @@
 """ Module Square"""
 
 
-from turtle import position
-
-
 class Square:
     """Square class defined by geometric shape
-    Attributes:
-        size(int): size of square
-        position (tuple): position of square
+
+        Attributes:
+            size(int): size of square
+            position (tuple): the square position
     """
     def __init__(self, size=0, position=(0, 0)):
         """
         Initialize methode
+
         Args:
-        size (int): size of square
-        position (tuple): position of square in 2D space
+            size (int): size of square
+            position (tuple): position of square in 2D space
         Returns:
             None
         """
@@ -104,3 +103,16 @@ class Square:
         if type(value[1]) != int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+    def __str__(self):
+        string = ""
+        if self.__size == 0:
+            return "\n"
+
+        string += '\n'*self.__position[1]
+        for i in range(self.__size):
+            string += ' '*self.__position[0]
+            string += '#'*self.__size
+            if i is not self.__size - 1:
+                string += '\n'
+        return string

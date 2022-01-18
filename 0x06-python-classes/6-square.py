@@ -2,9 +2,6 @@
 """ Module Square"""
 
 
-from turtle import position
-
-
 class Square:
     """Square class defined by geometric shape
     Attributes:

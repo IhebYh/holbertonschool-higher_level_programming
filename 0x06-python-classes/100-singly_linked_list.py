@@ -19,8 +19,8 @@ class Node:
             data (int): the data stored in the node.
             next_node (Node): a pointer to the next node
         """
-        self.__data = data
-        self.__next_node = None
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -81,29 +81,33 @@ class SinglyLinkedList:
         """
         self.__head = None
 
+    def sorted_insert(self, value):
+        """Insert a new Node to the SinglyLinkedList.
+        The node is inserted into the list at the correct
+        ordered numerical position.
+        Args:
+            value (Node): The new Node to insert.
+        """
+        new = Node(value)
+        if self.__head is None:
+            new.next_node = None
+            self.__head = new
+        elif self.__head.data > value:
+            new.next_node = self.__head
+            self.__head = new
+        else:
+            tmp = self.__head
+            while (tmp.next_node is not None and
+                    tmp.next_node.data < value):
+                tmp = tmp.next_node
+            new.next_node = tmp.next_node
+            tmp.next_node = new
+
     def __str__(self):
-        result = ""
+        """Define the print() representation of a SinglyLinkedList."""
+        values = []
         tmp = self.__head
         while tmp is not None:
-            result += str(self.data)
-            result += '\n'
-            tmp = tmp.__next_node
-        return result
-
-    def sorted_insert(self, value):
-        """
-        Inserts new Node into the correct soeted position
-        """
-        if self.__head is None:
-            self.__head = Node(value)
-        else:
-            new_node = Node(value)
-            tmp = self.__head
-            while tmp is not None:
-                if tmp.__next_node is None:
-                    tmp.__next_node = new_node
-                    new_node.__next_node = None
-                if new_node.__data < tmp.__next_node.__data:
-                    new_node.__next_node = tmp.__next_node
-                    tmp.__next_node = new_node
-                tmp = tmp.__next_node
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(values))

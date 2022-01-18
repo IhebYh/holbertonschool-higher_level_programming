@@ -20,7 +20,7 @@ class Node:
             next_node (Node): a pointer to the next node
         """
         self.__data = data
-        self.__next_node = next_node
+        self.__next_node = None
 
     @property
     def data(self):
@@ -40,7 +40,7 @@ class Node:
         Raises:
             TypeError: if value is not integer
         """
-        if type(value) != int:
+        if not type(value) is int:
             raise TypeError("data must be an integer")
         else:
             self.__data = value

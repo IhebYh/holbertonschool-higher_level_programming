@@ -18,7 +18,7 @@ class Square:
             None
         """
         self.__size = size
-        self.__position = position
+        self.position = position
 
     def area(self):
         """
@@ -69,10 +69,10 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            print('\n'*self.__position[1], end="")
+            print('\n' * self.position[1], end="")
             for i in range(self.size):
-                print(" "*self.__position[0], end="")
-                print("#"*self.size)
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
 
     @property
     def position(self):

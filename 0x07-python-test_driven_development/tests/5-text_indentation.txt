@@ -1,0 +1,36 @@
+Testing text indentation
+=========================
+using 'text_indentation'
+-------------------------
+
+importing module
+>>> indent = __import__("5-text_indentation").text_indentation
+
+Testing with a Normal Display
+>>> indent("Hello my name is Iheb. I am a software engineering student")
+Hello my name is Iheb.
+<BLANKLINE>
+I am a software engineering student
+
+Testing with another Normal Display
+>>> indent("Julius Caesar said: 'Es tu, Brute?")
+Julius Caesar said:
+<BLANKLINE>
+'Es tu, Brute?
+<BLANKLINE>
+
+Testing with empty string
+>>> indent("")
+
+
+Testing with an integer
+>>> indent(7)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Testing without an argument
+>>> indent()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

@@ -5,4 +5,7 @@ Rectangle Class module
 
 
 class Rectangle:
+    """
+    Rectangle class
+    """
     pass

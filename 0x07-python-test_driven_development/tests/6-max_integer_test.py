@@ -12,7 +12,7 @@ class TestMaxInteger(unittest.TestCase):
     """ tests for max_integer"""
     def test_normal(self):
         """ test normal input"""
-        self.assertEqual(max_integer([1, 2, 3, 4], 4))
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
     def test_no_arg(self):
         """tests empty input"""
@@ -24,11 +24,11 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_identical(self):
         """test identical input"""
-        self.assertEqual(max_integer([1, 1, 1], 1))
+        self.assertEqual(max_integer([1, 1, 1]), 1)
 
     def test_unordered(self):
         """ tests unordered input"""
-        self.assertEqual(max_integer([4, 8, 2, 7], 8))
+        self.assertEqual(max_integer([4, 8, 2, 7]), 8)
 
     def test_positive_negative(self):
         """ tests positive/negative input"""
@@ -50,7 +50,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer("198565468"), "9")
 
     def test_string(self):
-        self.assertEqual(max_integer("IhebYh", "h"))
+        self.assertEqual(max_integer("IhebYh"),"h")
 
 
 if __name__ == "__main__":

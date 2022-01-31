@@ -22,3 +22,9 @@ class Square(Rectangle):
         area of the square
         """
         return self.__size ** 2
+
+    def __str__(self):
+        """
+        string rep of the square
+        """
+        return ("[Square] {}/{}".format(self.__size, self.__size))

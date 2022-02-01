@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Student to JSON module
+Student class module
 """
 
 
@@ -16,8 +16,10 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
         retrieves a dict rep of a Student instance
         """
+        if type(attrs) is list and all([type(x) == str for x in attrs]):
+            return {i: j for i, j in self.__dict__.items() if i in attrs}
         return self.__dict__

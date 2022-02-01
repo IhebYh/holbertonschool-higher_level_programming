@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-my int module 
+my int module
 """
 
 
 class MyInt(int):
     """
-        a rebel class that inherits  from int 
+        a rebel class that inherits  from int
     """
     def __eq__(self, x):
         """equal"""

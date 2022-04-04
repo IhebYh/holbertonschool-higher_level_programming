@@ -2,16 +2,18 @@
 
 console.log(secondBig(process.argv));
 
-function secondBig (myArray) {
-  let i = 3;
-  let scnd = 0;
-  let max = myArray[2];
-  while (i < myArray.length) {
-    if (max < myArray[i]) {
-      scnd = max;
-      max = myArray[i];
+function secondBig (arr) {
+  let max = 0; let result = 0;
+
+  for (const value of arr) {
+    const nr = Number(value);
+
+    if (nr > max) {
+      [result, max] = [max, nr];
+    } else if (nr < max && nr > result) {
+      result = nr;
     }
-    i++;
   }
-  return scnd;
+
+  return result;
 }

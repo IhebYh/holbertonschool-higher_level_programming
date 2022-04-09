@@ -22,7 +22,7 @@ def main():
     cursor.execute(query)
     res = cursor.fetchall()
     for r in res:
-        if r[1] == search:
+        if r[1] == sys.argv[4]:
             print(r)
     cursor.close()
     cn.close()

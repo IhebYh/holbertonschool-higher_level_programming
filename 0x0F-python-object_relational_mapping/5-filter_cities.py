@@ -16,10 +16,10 @@ def main():
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    cursor.execute("""SELECT C.id, C.name, S.name
+    cursor.execute("""SELECT C.name
                     FROM cities C INNER JOIN states S ON C.state_id=S.id
                     WHERE S.name LIKE %s
-                    ORDER BY C.id""",(argv[4],))
+                    ORDER BY C.id""", (argv[4],))
     rows = cursor.fetchall()
     res = ""
     for row in rows:

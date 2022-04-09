@@ -18,12 +18,11 @@ def main():
     cursor = cn.cursor()
     safeSearch = sys.agrv[4]
     cursor.execute("""SELECT * FROM states
-                    WHERE name={:s}
+                    WHERE name = %s
                     ORDER BY id ASC""", (safeSearch,))
     res = cursor.fetchall()
     for r in res:
-        if r[1][0] == 'N':
-            print(r)
+        print(r)
     cursor.close()
     cn.close()
 

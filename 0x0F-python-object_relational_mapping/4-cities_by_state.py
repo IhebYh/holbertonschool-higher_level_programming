@@ -18,9 +18,9 @@ def main():
     cursor = cn.cursor()
     cursor.execute("""SELECT * FROM cities C, states S
                     WHERE C.name Like %s
-                    AND 
-                    C.state_id == S.id
-                    ORDER BY id ASC""", (argv[4],))
+                    AND
+                    C.state_id = S.id
+                    ORDER BY S.id ASC""", (argv[4],))
     res = cursor.fetchall()
     for r in res:
         print(r)

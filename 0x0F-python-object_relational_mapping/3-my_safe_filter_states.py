@@ -2,7 +2,7 @@
 """
 filtering states safe from sql injection
 """
-import sys
+from sys import argv
 import MySQLdb
 
 
@@ -10,16 +10,15 @@ def main():
     cn = MySQLdb.connect(
                         host="localhost",
                         port=3306,
-                        user=sys.argv[1],
-                        passwd=sys.argv[2],
-                        db=sys.argv[3],
+                        user=argv[1],
+                        passwd=argv[2],
+                        db=argv[3],
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    safeSearch = sys.agrv[4]
     cursor.execute("""SELECT * FROM states
-                    WHERE name Like %(safeSearch)s
-                    ORDER BY id ASC""", {'safeSearch': safeSearch})
+                    WHERE name Like %s
+                    ORDER BY id ASC""", (argv[4],))
     res = cursor.fetchall()
     for r in res:
         print(r)

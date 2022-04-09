@@ -20,7 +20,8 @@ def main():
     cursor.execute(query)
     res = cursor.fetchall()
     for r in res:
-        print(r)
+        if r[1][0] == 'N':
+            print(r)
     cursor.close()
     cn.close()
 

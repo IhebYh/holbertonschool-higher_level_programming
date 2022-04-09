@@ -16,7 +16,7 @@ def main():
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    query = "SELECT id,name FROM states WHERE name Like 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name Like 'N%' ORDER BY id ASC"
     cursor.execute(query)
     res = cursor.fetchall()
     for r in res:

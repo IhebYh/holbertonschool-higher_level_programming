@@ -18,7 +18,7 @@ def main():
     cursor = cn.cursor()
     query = "SELECT id,name FROM states ORDER BY id ASC"
     cursor.execute(query)
-    res = cur.fetchall()
+    res = cursor.fetchall()
     for r in res:
         print(r)
     cursor.close()

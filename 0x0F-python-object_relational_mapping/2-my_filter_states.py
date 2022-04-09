@@ -22,6 +22,7 @@ def main():
     cursor.execute(query)
     res = cursor.fetchall()
     for r in res:
+        if r[1] == search:
         print(r)
     cursor.close()
     cn.close()

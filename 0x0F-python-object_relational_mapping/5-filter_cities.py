@@ -24,7 +24,7 @@ def main():
     res = ""
     for row in rows:
         res += row[0] + ", "
-        print(res[0:-2:])
+    print(res[0:-2:])
     cursor.close()
     cn.close()
 

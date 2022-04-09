@@ -16,7 +16,7 @@ def main():
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    query = " select id,name from states order by id asc"
+    query = "SELECT id,name FROM states ORDER BY id ASC"
     cursor.execute(query)
     res = cur.fetchall()
     for r in res:

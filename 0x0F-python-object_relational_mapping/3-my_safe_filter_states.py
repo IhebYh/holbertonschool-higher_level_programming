@@ -18,8 +18,8 @@ def main():
     cursor = cn.cursor()
     safeSearch = sys.agrv[4]
     cursor.execute("""SELECT * FROM states
-                    WHERE name = %s
-                    ORDER BY id ASC""", (safeSearch,))
+                    WHERE name = %(safeSearch)s
+                    ORDER BY id ASC""", {'safeSearch':safeSearch})
     res = cursor.fetchall()
     for r in res:
         print(r)

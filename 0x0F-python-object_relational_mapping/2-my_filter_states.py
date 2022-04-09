@@ -23,7 +23,7 @@ def main():
     res = cursor.fetchall()
     for r in res:
         if r[1] == search:
-        print(r)
+            print(r)
     cursor.close()
     cn.close()
 

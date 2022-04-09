@@ -16,11 +16,8 @@ def main():
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    cursor.execute("""SELECT * FROM cities C, states S
-                    WHERE C.name Like %s
-                    AND
-                    C.state_id = S.id
-                    ORDER BY S.id ASC""", (argv[4],))
+    cursor.execute("""SELECT C.id, C.name, S.name
+                    FROM cities C INNER JOIN states S ON C.state_id=S.id""")
     res = cursor.fetchall()
     for r in res:
         print(r)

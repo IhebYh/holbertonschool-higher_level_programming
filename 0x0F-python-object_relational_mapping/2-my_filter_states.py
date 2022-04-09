@@ -16,7 +16,9 @@ def main():
                         charset="utf8"
                             )
     cursor = cn.cursor()
-    query = "SELECT * FROM states WHERE name={} ORDER BY id ASC".format(sys.argv[4])
+    query = """SELECT * FROM states
+    WHERE name='{:s}'
+    ORDER BY id ASC""".format(sys.argv[4])
     cursor.execute(query)
     res = cursor.fetchall()
     for r in res:

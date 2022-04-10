@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-relationship between states and cities 
+relationship between states and cities
 """
 from sys import argv
 from sqlalchemy import create_engine

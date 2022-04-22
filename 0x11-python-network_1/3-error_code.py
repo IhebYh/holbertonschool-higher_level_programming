@@ -3,13 +3,12 @@
 HTTP ERROR HANDLING
 """
 from sys import argv
-from urllib import request, parse, error
+from urllib import request, error
 
 if __name__ == "__main__":
-    req = request.Request(argv[1])
     try:
-        with request.urlopen(req) as res:
+        with request.urlopen(argv[1]) as res:
             info = res.read()
-            print(info.decode("ascii"))
+            print(info.decode("utf-8"))
     except error.HTTPError as e:
         print("Error code {}".format(e.code))

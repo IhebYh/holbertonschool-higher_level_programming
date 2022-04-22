@@ -2,7 +2,6 @@
 """
 Post an email to an url
 """
-import email
 from sys import argv
 from urllib import request, parse
 

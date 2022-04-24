@@ -2,10 +2,8 @@
 """
 python script that fetches a specific url
 """
-from urllib import request
-
-
-with request.urlopen('https://intranet.hbtn.io/status') as res:
-    html = res.read()
-    print("Body response:\n\t- type: {}\n\t- content: {}"
-          .format(type(html), html))
+import requests
+html = requests.get('https://intranet.hbtn.io/status')
+print("Body response:")
+print("\t- type: {}".format(html.text.__class__))
+print("\t- content: {}".format(html.text))

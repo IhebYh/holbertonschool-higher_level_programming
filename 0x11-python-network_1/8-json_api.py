@@ -10,7 +10,7 @@ if __name__ == '__main__':
     except Exception:
         arg = ""
     d = {"q": argv[2]}
-    r = requests.post(argv[1], data=d)
+    r = requests.post("http://0.0.0.0:5000/search_user", data=d)
     try:
         res = r.json()
     except Exception:

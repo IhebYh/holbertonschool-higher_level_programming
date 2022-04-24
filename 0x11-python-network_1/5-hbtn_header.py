@@ -3,7 +3,7 @@
 request module
 """
 import requests
-from sys import argv
+import sys
 
-html = requests.get(argv[1])
+html = requests.get(sys.argv[1])
 print(html.headers.get('X-Request-Id'))

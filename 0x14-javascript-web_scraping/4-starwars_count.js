@@ -6,6 +6,7 @@ req.get(url, function (err, response, body) {
   let sum = 0;
   if (err) {
     console.log(err);
+    return;
   }
   const data = JSON.parse(body);
   for (let i = 0; data.results[i] !== undefined; ++i) {
